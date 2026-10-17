@@ -1,0 +1,130 @@
+/* Font hierarchy and alignment reference the salary feed, retaining card structure. */
+body.ui-paper-blue.page-result.page-six-dim[data-ui-variant="b"] .ranking-list { gap: 10px; }
+body.ui-paper-blue.page-result.page-six-dim[data-ui-variant="b"] .ranking-item {
+  padding: 12px 14px; row-gap: 6px; align-items: flex-start; border-radius: 12px;
+  background: #fff; border-color: #e6ebf1; box-shadow: none;
+}
+body.ui-paper-blue.page-result.page-six-dim[data-ui-variant="b"] .ranking-item h3 {
+  color: #111; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 17px; font-weight: 700; line-height: 1.5;
+}
+body.ui-paper-blue.page-result.page-six-dim[data-ui-variant="b"] .ranking-item__body p {
+  margin: 3px 0 0; color: #111; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 15px; font-weight: 500; line-height: 1.65;
+}
+body.ui-paper-blue.page-result.page-six-dim[data-ui-variant="b"] .ranking-item__body > span {
+  color: #8a8f96; font-size: 11px; line-height: 1.7;
+}
+body.ui-paper-blue.page-result.page-six-dim[data-ui-variant="b"] .ranking-item__score { padding-top: 1px; }
+body.ui-paper-blue.page-result.page-six-dim[data-ui-variant="b"] .ranking-item__score strong {
+  color: #328ff0; font-size: 26px; font-weight: 650; line-height: 1.25;
+}
+body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-offer-card {
+  border-radius: 12px; padding: 16px; box-shadow: none; border-color: #e6ebf1;
+}
+body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-offer-company {
+  color: #171b20; font-size: 17px; line-height: 1.5; font-weight: 650;
+}
+body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-offer-role {
+  color: #343a42; font-size: 13px; line-height: 1.65; margin-top: 6px;
+}
+body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-offer-eyebrow {
+  color: #8a8f96; font-weight: 500; font-size: 10px; margin-bottom: 8px;
+}
+body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-offer-facts {
+  margin-top: 12px; background: #f6f7f8; border-radius: 8px; gap: 8px;
+}
+body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-offer-facts span { color: #8a8f96; }
+body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-offer-facts strong { color: #373e47; font-size: 14px; }
+body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-offer-facts > div:first-child strong { color: #328ff0; font-size: 22px; }
+body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-disclaimer {
+  padding: 10px 12px; border: 1px solid #efd79c; border-left: 3px solid #e9b746;
+  border-radius: 10px; background: #fff9eb; margin-bottom: 4px;
+}
+.background-disclaimer__heading { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; }
+body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-disclaimer__heading h2 {
+  margin: 0; color: #755a29; font-size: 12px; font-weight: 650; line-height: 1.5;
+}
+.background-disclaimer__icon {
+  display: grid; place-items: center; width: 16px; height: 16px; flex: none;
+  border: 1px solid #b88a36; border-radius: 50%; color: #926919; font-size: 10px; font-weight: 600;
+}
+.background-disclaimer__badge { margin-left: auto; color: #987a40; font-size: 9px; white-space: nowrap; }
+body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-disclaimer > p {
+  margin: 3px 0 0; color: #7c7058; font-size: 10px; line-height: 1.6;
+}
+body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-disclaimer > .background-disclaimer__demo {
+  padding-top: 8px; border-top: 1px solid #f0e3c4; color: #9a896b; font-size: 10px;
+}
+.research-preview { position: relative; overflow: hidden; min-height: 255px; border-radius: 10px; background: #f8fafc; }
+.research-preview__lines {
+  padding: 16px; filter: blur(4px); opacity: .65; user-select: none; pointer-events: none;
+}
+body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .research-preview__lines p {
+  margin: 0 0 16px; color: #8390a0; font-size: 12px; line-height: 1.85;
+}
+.research-preview__veil {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 12px; padding: 22px 12px;
+  background: linear-gradient(180deg, #ffffff24, #ffffffb8 35%, #ffffffcf 65%, #ffffff40);
+}
+.research-preview__lock { color: #6b8bab; font-size: 28px; line-height: 1; }
+body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .research-preview__caption {
+  margin: 0; text-align: center; color: #60768e; font-size: 12px; line-height: 1.6;
+}
+.research-preview__unlock {
+  min-height: 42px; max-width: 100%; padding: 10px 14px; border: 0; border-radius: 8px;
+  background: #328ff0; color: #fff; font-family: inherit; font-size: 12px; font-weight: 600; line-height: 1.6; cursor: pointer;
+}
+.research-preview__unlock:disabled { opacity: .65; cursor: wait; }
+.research-preview__unlock:focus-visible { outline: 2px solid #328ff0; outline-offset: 4px; }
+.research-preview__veil > small { color: #8a9bac; font-size: 10px; line-height: 1.5; }
+@media (max-width: 360px) {
+  body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-offer-card { padding: 14px 12px; }
+  body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-offer-heading { gap: 8px; }
+  body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-offer-company { font-size: 16px; }
+  body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-report-trigger { padding-inline: 9px; }
+  .background-disclaimer__heading { gap: 6px; }
+  .research-preview__unlock { padding-inline: 10px; font-size: 11px; }
+}
+
+/* Ranking card footer: package/city left, completeness right. */
+body.ui-paper-blue.page-result.page-six-dim[data-ui-variant="b"] .ranking-item__body { grid-column: 1; grid-row: 1; padding-bottom: 0; }
+body.ui-paper-blue.page-result.page-six-dim[data-ui-variant="b"] .ranking-item__score { grid-column: 2; grid-row: 1; }
+body.ui-paper-blue.page-result.page-six-dim[data-ui-variant="b"] .ranking-item__footer {
+  grid-column: 1 / -1; grid-row: 2; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 8px 10px; min-width: 0; color: #8a8f96; font-size: 11px; line-height: 1.7;
+}
+body.ui-paper-blue.page-result.page-six-dim[data-ui-variant="b"] .ranking-item__tags {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 5px; min-width: 0;
+}
+body.ui-paper-blue.page-result.page-six-dim[data-ui-variant="b"] .ranking-item__tag {
+  display: inline-flex; align-items: center; padding: 3px 6px; border-radius: 4px;
+  background: #eaf3ff; color: #328ff0; font-size: 12px; font-weight: 400; line-height: 1.6; white-space: nowrap;
+}
+body.ui-paper-blue.page-result.page-six-dim[data-ui-variant="b"] .ranking-item__completeness { flex: none; white-space: nowrap; }
+
+@media (max-width: 360px) {
+  body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-disclaimer > p:not(.background-disclaimer__demo) { font-size: 10px; }
+}
+
+/* Background cards follow the ranking card typography and tag layout. */
+body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-offer-company {
+  color: #111; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 17px; font-weight: 700; line-height: 1.5;
+}
+body.ui-paper-blue.page-background-check.page-six-dim[data-ui-variant="b"] .background-offer-role {
+  margin: 6px 0 0; color: #111; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 15px; font-weight: 500; line-height: 1.65;
+}
+.background-offer-footer {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  gap: 8px 10px; margin-top: 16px;
+}
+.background-offer-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; min-width: 0; }
+.background-offer-tag {
+  display: inline-flex; align-items: center; padding: 3px 6px; border-radius: 4px;
+  background: #eaf3ff; color: #328ff0; font-size: 12px; font-weight: 400; line-height: 1.6; white-space: nowrap;
+}
+.background-offer-completeness { color: #8a8f96; font-size: 11px; line-height: 1.7; white-space: nowrap; }
+
+.research-preview--body { background: transparent; border-radius: 0; min-height: 270px; }
+.research-preview--body .research-preview__lines { padding: 0; }

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OfferShow - 偏好设置</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../styles/variant-b.css">
+  <link rel="stylesheet" href="../styles/six-dim-base.css">
+  <link rel="stylesheet" href="../styles/compact-preferences.css">
+  <link rel="stylesheet" href="../styles/preference-portrait.css">
+  <link rel="stylesheet" href="../styles/paper-blue-v5.css">
+  <link rel="stylesheet" href="../styles/ui-polish.css">
+  <link rel="stylesheet" href="../styles/six-dim-v5.css">
+  <link rel="stylesheet" href="../styles/review-refinements.css?v=manual-city-v1">
+</head>
+<body data-ui-variant="b" class="ui-minimal ui-paper-blue page-preferences page-preferences-choice page-six-dim">
+  <header class="app-header"><div class="app-header__inner"><a class="topbar-back" href="../index.html?ui=review-v2" aria-label="返回上一页"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg><span>返回</span></a><h1 class="topbar-title">偏好画像</h1></div><p class="mini-page-caption">先定标准，再看你在意什么。</p><span class="mini-page-brand">OfferShow</span></header>
+  <div class="app-shell">
+
+    <nav class="flow-nav" aria-label="决策进度"><ol class="step-indicator"><li class="step-indicator__item is-current" aria-current="step"><span>偏好画像</span></li><li class="step-indicator__item"><span>填写 Offer</span></li><li class="step-indicator__item"><span>分析结果</span></li><li class="step-indicator__item"><span>AI 背调</span></li></ol></nav>
+    <main class="page-content mini-page">
+
+      <section class="form-surface">
+        <form id="preferenceForm" class="stack-form" novalidate>
+          <section class="question-section">
+            <div class="form-section-title"><span>01</span><div><h2>薪资与城市</h2></div></div>
+          <div class="question-card">
+            <p class="section-eyebrow">问题 1 / 10 · 薪资校准</p>
+            <div class="info-label-row">
+              <label for="idealAnnualPackage">期望薪资</label>
+              <details class="info-tip"><summary aria-label="查看期望薪资的填写说明">!</summary><div class="info-tip__bubble">填写达到后会比较满意的常态税前年薪资；只计入能够合理估值的持续性收入。</div></details>
+            </div>
+            <div class="unit-input">
+              <input id="idealAnnualPackage" name="idealAnnualPackage" type="number" inputmode="decimal" min="0.1" step="0.1" placeholder="例如：40" aria-describedby="idealAnnualPackageUnit" required>
+              <span id="idealAnnualPackageUnit" class="unit-input__suffix">万元</span>
+            </div>
+          </div>
+
+          <div class="question-card city-question">
+            <div class="city-manual-group">
+              <div class="city-field-heading"><div class="info-label-row city-label-with-tip"><label for="preferredCity">意向城市</label><details id="cityScoringTip" class="info-tip"><summary aria-label="查看城市填写和评分说明">!</summary><div class="info-tip__bubble">城市维度中，意向城市计 100 分，其他可接受城市计 80 分，其余城市计 40 分。最终影响取决于你对城市的重视程度。</div></details></div><span>仅填写一个</span></div>
+              <input id="preferredCity" name="preferredCity" type="text" placeholder="示例：北京（不用带市），仅填写一个城市。" autocomplete="address-level2" required>
+            </div>
+            <input id="preferredProvinceCode" name="preferredProvinceCode" type="hidden">
+            <input id="preferredCityCode" name="preferredCityCode" type="hidden">
+            <div class="city-manual-group city-field-heading--other">
+              <div class="city-field-heading"><label for="acceptableCities">其他可接受的城市</label><span>可填写多个</span></div>
+              <input id="acceptableCities" name="acceptableCities" type="text" placeholder="示例：上海、杭州、南京" aria-describedby="acceptableCitiesHint" autocomplete="off" required>
+              <p id="acceptableCitiesHint" class="city-field-caption city-field-caption--after">多个城市请使用顿号“、”分隔；如果没有其他可接受城市，可填写“无”。</p>
+            </div>
+            <input id="considerOtherCities" name="considerOtherCities" type="hidden">
+            <input id="acceptableCityCodes" name="acceptableCityCodes" type="hidden">
+            <p id="citySelectionStatus" class="city-inline-status" role="status"></p>
+          </div>
+
+          </section>
+          <section class="question-section">
+            <div class="form-section-title form-section-title--inline"><span>02</span><div class="form-section-heading"><h2>六维重要程度</h2><p class="v5-section-prompt">各因素对你有多重要？</p></div></div>
+          <div class="question-card">
+            <p class="section-eyebrow">问题 3 / 10 · 总包预期</p>
+            <label for="importanceTotalPackage">总包预期</label>
+            <select id="importanceTotalPackage" name="importanceTotalPackage" required>
+              <option value="">请选择</option>
+              <option value="1">1 · 不太看重：总包高低影响很小</option>
+              <option value="2">2 · 稍微看重：差距很大才会在意</option>
+              <option value="3">3 · 一般：会和其他条件一起权衡</option>
+              <option value="4">4 · 比较看重：高低会明显影响选择</option>
+              <option value="5">5 · 非常看重：总包是核心因素</option>
+            </select>
+          </div>
+
+          <div class="question-card">
+            <p class="section-eyebrow">问题 4 / 10 · 稳定性</p>
+            <label for="importanceStability">稳定性</label>
+            <select id="importanceStability" name="importanceStability" required>
+              <option value="">请选择</option>
+              <option value="1">1 · 不太看重：可以接受较高不确定性</option>
+              <option value="2">2 · 稍微看重：机会好就能承担风险</option>
+              <option value="3">3 · 一般：希望风险与机会平衡</option>
+              <option value="4">4 · 比较看重：希望业务与岗位可测算</option>
+              <option value="5">5 · 非常看重：确定性是核心因素</option>
+            </select>
+          </div>
+
+          <div class="question-card">
+            <p class="section-eyebrow">问题 5 / 10 · 成长空间</p>
+            <label for="importanceGrowth">成长空间</label>
+            <select id="importanceGrowth" name="importanceGrowth" required>
+              <option value="">请选择</option>
+              <option value="1">1 · 不太看重：工作内容合适即可</option>
+              <option value="2">2 · 稍微看重：有学习机会更好</option>
+              <option value="3">3 · 一般：希望能力持续提升</option>
+              <option value="4">4 · 比较看重：需要明确的成长机会</option>
+              <option value="5">5 · 非常看重：成长是核心因素</option>
+            </select>
+          </div>
+
+          <div class="question-card">
+            <p class="section-eyebrow">问题 6 / 10 · 工作强度</p>
+            <label for="importanceWorkIntensity">工作强度</label>
+            <select id="importanceWorkIntensity" name="importanceWorkIntensity" required>
+              <option value="">请选择</option>
+              <option value="1">1 · 不太看重：长期高强度也能接受</option>
+              <option value="2">2 · 稍微看重：经常加班也可以</option>
+              <option value="3">3 · 一般：能接受阶段性忙碌</option>
+              <option value="4">4 · 比较看重：希望多数时间可控</option>
+              <option value="5">5 · 非常看重：难以接受长期高压</option>
+            </select>
+          </div>
+
+          <div class="question-card">
+            <p class="section-eyebrow">问题 7 / 10 · 城市匹配度</p>
+            <label for="importanceCityLife">城市匹配度</label>
+            <select id="importanceCityLife" name="importanceCityLife" required>
+              <option value="">请选择</option>
+              <option value="1">1 · 不太看重：在哪工作都可以</option>
+              <option value="2">2 · 稍微看重：好机会可以迁移</option>
+              <option value="3">3 · 一般：需要兼顾机会与生活</option>
+              <option value="4">4 · 比较看重：希望城市符合预期</option>
+              <option value="5">5 · 非常看重：城市是核心因素</option>
+            </select>
+          </div>
+
+          <div class="question-card">
+            <p class="section-eyebrow">问题 8 / 10 · 团队匹配度</p>
+            <label for="importanceTeamFit">团队匹配度</label>
+            <select id="importanceTeamFit" name="importanceTeamFit" required>
+              <option value="">请选择</option>
+              <option value="1">1 · 不太看重：能够正常合作即可</option>
+              <option value="2">2 · 稍微看重：短期不合适也能适应</option>
+              <option value="3">3 · 一般：需要结合其他条件判断</option>
+              <option value="4">4 · 比较看重：不合适会明显犹豫</option>
+              <option value="5">5 · 非常看重：明显不合适就很难接受</option>
+            </select>
+          </div>
+
+          </section>
+          <section class="question-section">
+            <div class="form-section-title"><span>03</span><div class="info-label-row"><h2>两次真实取舍</h2><details class="info-tip"><summary aria-label="查看两次取舍的说明">!</summary><div class="info-tip__bubble">两道题固定出现，只要求做两次关键取舍，不需要给六个维度完整排序。</div></details></div></div>
+          <div class="question-card">
+            <p class="section-eyebrow">问题 9 / 10 · 第一次取舍</p>
+            <label>请选择你最不愿意牺牲的一项，以及相对最可以妥协的一项。</label>
+            <div class="tradeoff-choice-grid">
+              <div>
+                <label for="tradeoffPrimaryKeep">最不愿意牺牲</label>
+                <select id="tradeoffPrimaryKeep" name="tradeoffPrimaryKeep" required>
+                  <option value="">请选择</option>
+                  <option value="totalPackage">总包预期 · 收入是否接近理想总包</option>
+                  <option value="stability">稳定性 · 工作是否稳定可预期</option>
+                  <option value="growth">成长空间 · 能力与履历是否持续提升</option>
+                  <option value="workIntensity">工作强度 · 节奏是否长期可持续</option>
+                  <option value="cityLife">城市匹配度 · 是否符合意向或可接受城市</option>
+                  <option value="teamFit">团队匹配度 · 领导与团队是否合适</option>
+                </select>
+              </div>
+              <div>
+                <label for="tradeoffPrimaryCompromise">相对最可以妥协</label>
+                <select id="tradeoffPrimaryCompromise" name="tradeoffPrimaryCompromise" required>
+                  <option value="">请选择</option>
+                  <option value="totalPackage">总包预期 · 收入是否接近理想总包</option>
+                  <option value="stability">稳定性 · 工作是否稳定可预期</option>
+                  <option value="growth">成长空间 · 能力与履历是否持续提升</option>
+                  <option value="workIntensity">工作强度 · 节奏是否长期可持续</option>
+                  <option value="cityLife">城市匹配度 · 是否符合意向或可接受城市</option>
+                  <option value="teamFit">团队匹配度 · 领导与团队是否合适</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="question-card">
+            <p class="section-eyebrow">问题 10 / 10 · 第二次取舍</p>
+            <label>在剩余因素中，你更希望优先保留哪一项？哪一项更可以妥协？</label>
+            <div class="tradeoff-choice-grid">
+              <div>
+                <label for="tradeoffSecondaryKeep">更希望保留</label>
+                <select id="tradeoffSecondaryKeep" name="tradeoffSecondaryKeep" required disabled>
+                  <option value="">请先完成第一次取舍</option>
+                </select>
+              </div>
+              <div>
+                <label for="tradeoffSecondaryCompromise">相对更可以妥协</label>
+                <select id="tradeoffSecondaryCompromise" name="tradeoffSecondaryCompromise" required disabled>
+                  <option value="">请先完成第一次取舍</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          </section>
+        </form>
+      </section>
+
+      <section class="preview-card portrait-ready has-compact-preview" id="preferencePortrait" hidden>
+        <details class="compact-preview" open>
+          <summary class="compact-preference-summary compact-preview-summary"><div class="preview-card__head"><span class="live-status">实时画像</span></div></summary>
+          <div class="compact-preview-content">
+            <div class="portrait-intro"><div class="portrait-title-row"><h2 id="preferenceHeadline" class="preview-title"></h2></div></div>
+            <div class="weight-preview">
+              <div class="panel-title-row"><h3>你的偏好分布</h3><button type="button" id="openWeightTunerBtn" class="portrait-tuner-link" disabled>微调权重</button></div>
+              <p id="preferenceStatusText" class="portrait-weight-note">比较 Offer 时，越在意的方向占比越高。</p>
+              <div id="previewWeightList" class="portrait-distribution"></div>
+            </div>
+            <section class="portrait-context"><h3>同时，也照顾这些期待</h3><dl id="portraitFacts" class="portrait-facts"></dl></section>
+        <div id="weightTunerPanel" class="weight-tuner-panel" hidden>
+          <div class="weight-tuner-panel__head">
+            <div>
+              <p class="section-eyebrow">自定义偏好</p>
+              <h3>微调六维权重</h3>
+            </div>
+            <div class="info-tuner-actions">
+              <strong id="weightTunerTotal">合计 100%</strong>
+              <details class="info-tip"><summary aria-label="查看权重微调规则">!</summary><div class="info-tip__bubble">拖动任一项时，其余五项会按当前比例自动调整，六项始终合计 100%。保存后将直接使用微调结果进行 Offer 打分；不微调则使用问卷生成结果。</div></details>
+            </div>
+          </div>
+          <div id="weightTunerList" class="weight-tuner-list"></div>
+          <div class="weight-tuner-actions">
+            <button type="button" id="resetWeightTunerBtn" class="btn btn-ghost">恢复问卷结果</button>
+            <button type="button" id="cancelWeightTunerBtn" class="btn btn-outline">取消</button>
+            <button type="button" id="saveWeightTunerBtn" class="btn btn-primary">保存并用于分析</button>
+          </div>
+        </div>
+          </div>
+        </details>
+      </section>
+      <p class="local-storage-note local-storage-note--form-end">填写信息保存在本地设备。</p>
+    </main>
+
+    <footer class="bottom-action-bar">
+      <p id="preferenceValidation" class="validation-message"></p>
+      <a id="returnToResultBtn" href="./result.html?ui=review-v2" class="btn btn-secondary" hidden>返回结果</a>
+      <button type="button" id="goToOffersBtn" class="btn btn-primary">填写 Offer<svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </footer>
+  </div>
+  <script src="../scripts/china-cities.js"></script>
+  <script src="../scripts/location-catalog.js?v=overseas-v1"></script>
+  <script src="../../state.js"></script>
+  <script src="../../storage.js"></script>
+  <script src="../../copywriting.js?v=manual-city-v1"></script>
+  <script src="../../scoring.js?v=manual-city-v1"></script>
+  <script src="../scripts/core-algorithm-adapter.js"></script>
+  <script src="../scripts/six-dim-v5.js?v=manual-city-v1"></script>
+</body>
+</html>

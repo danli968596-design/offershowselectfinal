@@ -1,0 +1,117 @@
+/* V5: keep the collage cover and score stamp; carry paper into quieter inner pages. */
+body.ui-paper-blue[data-ui-variant="b"] .app-header {
+  background-image: url("../assets/paper-focus.svg"); background-size: 100% 100%;
+}
+body.ui-paper-blue[data-ui-variant="b"] .app-header::before {
+  content: ""; position: absolute; top: 70px; right: 25px; width: 60px; height: 70px;
+  border: 1px solid #fff; border-radius: 6px; background: #ffffffb3;
+  transform: rotate(9deg); box-shadow: 4px 5px 0 #8fc2ee33; pointer-events: none;
+}
+body.ui-paper-blue[data-ui-variant="b"] .app-header::after {
+  content: ""; position: absolute; top: 94px; right: 42px; width: 20px; height: 11px;
+  border-left: 3px solid #6ca4db; border-bottom: 3px solid #6ca4db;
+  transform: rotate(-38deg); pointer-events: none;
+}
+body.ui-paper-blue.page-landing[data-ui-variant="b"] .mini-home-route { border-radius: 12px; background: #f2f7fd; }
+body.ui-paper-blue.page-landing[data-ui-variant="b"] .mini-home-step { box-shadow: 1px 2px 0 var(--step-shadow); }
+body.ui-paper-blue.page-landing[data-ui-variant="b"] .mini-home-flow p { color: #6b8196; }
+body.ui-paper-blue.page-landing[data-ui-variant="b"] .paper-ribbon { color: #3f3520; }
+body.ui-paper-blue.page-preferences-choice[data-ui-variant="b"] .form-surface { border-radius: 10px; box-shadow: 0 3px 12px #233c5005; }
+body.ui-paper-blue.page-preferences-choice[data-ui-variant="b"] .question-card + .question-card { margin-top: 18px; }
+body.ui-paper-blue.page-preferences-choice[data-ui-variant="b"] .form-section-title h2 { font-weight: 650; }
+body.ui-paper-blue.page-preferences-choice[data-ui-variant="b"] .form-section-title h2::after { height: 4px; }
+body.ui-paper-blue.page-preferences-choice[data-ui-variant="b"] .preference-choices { border-radius: 7px; background: #f4f8fd; }
+body.ui-paper-blue.page-preferences-choice[data-ui-variant="b"] .preference-choice-feedback { color: #6c7c8b; }
+body.ui-paper-blue.page-offers[data-ui-variant="b"] #offerCards .compact-offer { border-radius: 10px; }
+body.ui-paper-blue.page-offers[data-ui-variant="b"] #offerCards .offer-section__title { font-weight: 650; }
+body.ui-paper-blue.page-offers[data-ui-variant="b"] #offerCards .offer-choices { border-radius: 7px; background: #f4f8fd; }
+body.ui-paper-blue.page-result[data-ui-variant="b"] .recommendation { border-radius: 10px; box-shadow: 0 3px 12px #233c5007; }
+body.ui-paper-blue.page-result[data-ui-variant="b"] .recommendation__main > p { color: #596d80; font-size: 14px; line-height: 1.8; }
+body.ui-paper-blue.page-result[data-ui-variant="b"] .report-section { border-radius: 10px; }
+body.ui-paper-blue.page-result[data-ui-variant="b"] .ranking-item { border-radius: 7px; }
+body.ui-paper-blue.page-result[data-ui-variant="b"] .ranking-item > strong { font-variant-numeric: tabular-nums; }
+body.ui-paper-blue.page-qa[data-ui-variant="b"].qa-accordion-ready .qa-questions { border-radius: 10px; }
+body.ui-paper-blue.page-qa[data-ui-variant="b"] .qa-question-topic { color: #718298; font-size: 11px; margin-bottom: 4px; }
+body.ui-paper-blue.page-qa[data-ui-variant="b"] .qa-question-title { color: #354a60; font-weight: 550; }
+body.ui-paper-blue.page-qa[data-ui-variant="b"] .qa-accordion__item.is-open .qa-question-title { font-weight: 600; }
+body.ui-paper-blue.page-qa[data-ui-variant="b"] .qa-accordion__body {
+  margin: 0 0 14px; padding: 14px 14px 44px; border-radius: 7px; background: #f3f7fc;
+}
+body.ui-paper-blue.page-qa[data-ui-variant="b"] .qa-accordion__content { color: #60748a; font-size: 14px; line-height: 1.8; gap: 10px; }
+body.ui-paper-blue.page-qa[data-ui-variant="b"] .qa-accordion__content > :first-child { color: #405a73; font-size: 14px; font-weight: 500; }
+body.ui-paper-blue.page-qa[data-ui-variant="b"] .qa-accordion__item[data-question-id="ask-hr"] .qa-accordion__content > :first-child { color: #60748a; font-size: 14px; font-weight: 400; }
+body.ui-paper-blue.page-qa[data-ui-variant="b"] .qa-accordion__content > :last-child { padding-right: 0; }
+body.ui-paper-blue.page-qa[data-ui-variant="b"] .qa-accordion__tools { position: absolute; right: 6px; bottom: 17px; margin: 0; }
+body.ui-paper-blue.page-qa[data-ui-variant="b"] .qa-accordion__copy { color: #738ca5; background: transparent; }
+body.ui-paper-blue.page-qa[data-ui-variant="b"] .qa-accordion__copy.is-copied { color: #2786df; }
+body.ui-paper-blue.page-qa[data-ui-variant="b"] .qa-accordion__copy.is-error { color: #b86d55; }
+
+/* The V5 journey now ends at analysis; keep the three stops evenly spaced. */
+body.ui-paper-blue[data-ui-variant="b"] .step-indicator {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+body.ui-paper-blue.page-landing[data-ui-variant="b"] .mini-home-flow {
+  grid-template-rows: repeat(3, minmax(84px, 1fr));
+}
+
+/* Present the recommendation like V4 while retaining V5's page and data. */
+body.ui-paper-blue.page-result[data-ui-variant="b"] .recommendation {
+  grid-template-columns: minmax(0, 1fr) 104px;
+  gap: 6px 10px;
+  padding: 18px;
+  border: 0;
+  border-radius: 14px;
+  background: #f2f7fd;
+  box-shadow: none;
+}
+body.ui-paper-blue.page-result[data-ui-variant="b"] .badge {
+  color: #327fce;
+  background: #e8f3ff;
+}
+body.ui-paper-blue.page-result[data-ui-variant="b"] .recommendation h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+body.ui-paper-blue.page-result[data-ui-variant="b"] .recommendation__main > p {
+  color: #7c8b9a;
+  border-top-color: #dce8f5;
+  font-size: 13px;
+  line-height: 1.8;
+}
+body.ui-paper-blue.page-result[data-ui-variant="b"] .score-pill {
+  width: auto;
+  min-height: 0;
+  padding: 0;
+  gap: 2px;
+  border: 0;
+  outline: 0;
+  border-radius: 0;
+  background: transparent;
+  aspect-ratio: auto;
+  transform: none;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: right;
+}
+body.ui-paper-blue.page-result[data-ui-variant="b"] .score-pill > div {
+  justify-content: flex-end;
+  gap: 0;
+}
+body.ui-paper-blue.page-result[data-ui-variant="b"] .score-pill strong {
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+body.ui-paper-blue.page-result[data-ui-variant="b"] .score-pill small {
+  margin-left: 4px;
+}
+body.ui-paper-blue.page-result[data-ui-variant="b"] .score-pill > span:first-child {
+  color: #7e8996;
+  font-size: 12px;
+}
+body.ui-paper-blue.page-result[data-ui-variant="b"] .score-pill .score-label {
+  display: block;
+  color: #8f9ba8;
+  font-size: 11px;
+  line-height: 1.4;
+}

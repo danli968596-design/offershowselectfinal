@@ -1,0 +1,132 @@
+/* OfferShow's paper mascot joins the existing V5 cover composition. */
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] {
+  --bg: #efeff1;
+  background: #efeff1;
+}
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-header {
+  background-image: url("../assets/paper-cover-brand-v2.svg");
+}
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-brand {
+  z-index: 2;
+  color: #267edc;
+  font-size: 15px;
+  letter-spacing: -.35px;
+}
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-header h1,
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .paper-ribbon { z-index: 2; }
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .home-brand-art {
+  position: absolute;
+  top: 36px;
+  right: 0;
+  width: min(50%, 210px);
+  height: 198px;
+  pointer-events: none;
+}
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .home-brand-art > img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .home-brand-card {
+  position: absolute;
+  right: 18px;
+  top: 2px;
+  width: 102px;
+  height: 136px;
+  border-radius: 8px;
+  box-shadow: 2px 4px 0 #315c8010;
+}
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .home-brand-card--back {
+  top: 5px;
+  right: 30px;
+  background: #f9cc65;
+  transform: rotate(-9deg);
+}
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .home-brand-card--front {
+  padding: 14px;
+  border: 3px solid #fff;
+  background: #f3f8fe;
+  transform: rotate(12deg);
+}
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .home-brand-card--front::before {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 5px;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  background: #328ff0;
+}
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .home-brand-card--front > span {
+  display: block;
+  height: 4px;
+  margin-top: 7px;
+  border-radius: 2px;
+  background: #cddff0;
+}
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .home-brand-card--front > span:nth-child(2) { width: 80%; }
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-footer { margin-top: 16px; }
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-footer img { width: 40px; }
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-footer strong { color: #345d82; font-weight: 650; }
+/* Spread four equal rows between the section heading and brand footer. */
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-sheet { flex: 1; }
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-route {
+  display: flex;
+  flex: 1;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-flow {
+  flex: 1;
+  width: 100%;
+  grid-template-rows: repeat(4, minmax(64px, 1fr));
+  gap: 4px;
+}
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-flow li {
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 12px;
+  min-height: 64px;
+  padding: 4px 2px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-flow li::before {
+  content: none;
+}
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-step {
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
+  border-width: 1.5px;
+  box-shadow: 1px 2px 0 var(--step-shadow);
+}
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-flow strong {
+  font-size: 17px;
+  line-height: 1.45;
+}
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-flow p {
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 1.65;
+}
+@media (max-width: 360px) {
+  body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .paper-title__offer { font-size: 52px; }
+  body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .paper-title__choice { font-size: 50px; padding-inline: 18px; }
+  body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .home-brand-art { top: 42px; width: 52%; height: 178px; }
+  body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .home-brand-card { right: 15px; width: 88px; height: 120px; }
+  body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .home-brand-card--back { right: 25px; }
+}
+
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .local-storage-note { margin: 0; padding: 7px 0 0; color: #8da0b2; font-size: 11px; line-height: 1.7; text-align: center; }
+
+/* Trial: put the short local-storage note beside the four-step heading. */
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 17px; }
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-section-heading h2 { flex: none; margin: 0; }
+body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-section-heading .local-storage-note { flex: none; margin: 0; padding: 0; font-size: 10.5px; line-height: 1.5; text-align: right; white-space: nowrap; }

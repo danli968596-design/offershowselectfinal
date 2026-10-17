@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OfferShow - Offer 录入</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../styles/variant-b.css">
+  <link rel="stylesheet" href="../styles/six-dim-base.css">
+  <link rel="stylesheet" href="../styles/compact-offers.css">
+  <link rel="stylesheet" href="../styles/offer-choices.css">
+  <link rel="stylesheet" href="../styles/paper-blue-v5.css">
+  <link rel="stylesheet" href="../styles/ui-polish.css">
+  <link rel="stylesheet" href="../styles/six-dim-v5.css">
+  <link rel="stylesheet" href="../styles/review-refinements.css?v=note-form-end-v1">
+</head>
+<body data-ui-variant="b" class="ui-minimal ui-paper-blue page-offers page-six-dim">
+  <header class="app-header"><div class="app-header__inner"><a class="topbar-back" href="./preferences.html?ui=review-v2" aria-label="返回上一页"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg><span>返回</span></a><h1 class="topbar-title">填写 Offer</h1></div><p class="mini-page-caption">2–6 份 Offer，放在一起比较。</p><span class="mini-page-brand">OfferShow</span></header>
+  <div class="app-shell">
+
+    <nav class="flow-nav" aria-label="决策进度"><ol class="step-indicator"><li class="step-indicator__item is-complete"><a class="mini-step-link" href="./preferences.html?ui=review-v2">偏好画像</a></li><li class="step-indicator__item is-current" aria-current="step"><span>填写 Offer</span></li><li class="step-indicator__item"><span>分析结果</span></li><li class="step-indicator__item"><span>AI 背调</span></li></ol></nav>
+    <main class="page-content mini-page">
+
+      <div class="offers-toolbar">
+        <div class="section-actions-inline">
+          <button type="button" id="clearAllBtn" class="btn btn-ghost">清空数据</button>
+          <button type="button" id="loadOfferDemoBtn" class="btn btn-secondary">示例数据</button>
+          <button type="button" id="addOfferBtn" class="btn btn-outline" aria-label="新增 Offer" title="新增 Offer"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add-offer-label">新增 Offer</span></button>
+        </div>
+      </div>
+      <section id="offerCards" class="offer-grid" aria-label="Offer 编辑区"></section>
+      <p class="local-storage-note local-storage-note--form-end">填写信息保存在本地设备。</p>
+    </main>
+
+    <footer class="bottom-action-bar">
+      <p id="validationMessage" class="validation-message"></p>
+      <span id="offerCountText" class="offer-count-text"></span>
+      <a id="returnToResultBtn" href="./result.html?ui=review-v2" class="btn btn-secondary" hidden>返回结果</a>
+      <button type="button" id="goToResultBtn" class="btn btn-primary">分析 Offer<svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </footer>
+  </div>
+  <dialog id="offerCityPickerDialog" class="review-sheet city-picker-dialog" aria-labelledby="offerCityPickerTitle" aria-describedby="offerCityPickerDescription">
+    <div class="sheet-head"><div><p class="sheet-eyebrow">Offer 所在地点</p><h2 id="offerCityPickerTitle">选择城市或国家</h2></div><button type="button" class="sheet-close" id="closeOfferCityPickerBtn" aria-label="关闭城市选择">×</button></div>
+    <p id="offerCityPickerDescription" class="sheet-description">选择国内城市或海外国家，点选后保存。</p>
+    <div class="city-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="offerCitySearchInput" type="search" placeholder="搜索城市或国家，如：杭州、新加坡" aria-label="搜索城市或国家" autocomplete="off"></div>
+    <div class="location-scope" role="group" aria-label="地点范围"><button type="button" data-location-scope="domestic" aria-pressed="true">国内城市</button><button type="button" data-location-scope="overseas" aria-pressed="false">海外国家</button></div>
+    <div class="city-picker-scroll"><div class="city-browse-heading"><h3 id="offerCityResultsTitle">常用城市</h3><select id="offerCityProvinceFilter" aria-label="按省份查看城市"><option value="">全部省份</option></select></div><div id="offerCityPickerResults" class="city-picker-grid"></div><p id="offerCitySearchEmpty" class="city-empty" hidden>没有找到匹配地点，试试城市或国家的中英文名称。</p></div>
+  </dialog>
+  <script src="../scripts/china-cities.js"></script>
+  <script src="../scripts/location-catalog.js?v=overseas-v1"></script>
+  <script src="../../state.js"></script>
+  <script src="../../storage.js"></script>
+  <script src="../../copywriting.js?v=manual-city-v1"></script>
+  <script src="../../scoring.js?v=manual-city-v1"></script>
+  <script src="../scripts/core-algorithm-adapter.js"></script>
+  <script src="../scripts/six-dim-v5.js?v=manual-city-v1"></script>
+  <script src="../scripts/offer-city-picker-ui.js?v=overseas-v1"></script>
+</body>
+</html>

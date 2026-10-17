@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OfferShow · 匿名发布</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../styles/variant-b.css">
+  <link rel="stylesheet" href="../styles/six-dim-base.css">
+  <link rel="stylesheet" href="../styles/paper-blue-v5.css">
+  <link rel="stylesheet" href="../styles/ui-polish.css">
+  <link rel="stylesheet" href="../styles/six-dim-v5.css">
+  <link rel="stylesheet" href="../styles/review-refinements.css">
+</head>
+<body data-ui-variant="b" class="ui-minimal ui-paper-blue page-publish-preview page-six-dim">
+  <header class="app-header">
+    <div class="app-header__inner">
+      <a class="topbar-back" href="./result.html?ui=review-v2" aria-label="返回分析结果"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg><span>返回</span></a>
+      <h1 class="topbar-title">匿名发布</h1>
+    </div>
+    <p class="mini-page-caption">分享一份信息，帮助下一位求职者。</p><span class="mini-page-brand">OfferShow</span>
+  </header>
+  <div class="app-shell">
+    <nav class="flow-nav publish-progress" aria-label="发布进度"><ol class="step-indicator"><li class="step-indicator__item is-complete"><a href="./result.html?ui=review-v2" class="mini-step-link">选择 Offer</a></li><li class="step-indicator__item is-current" aria-current="step"><span>核对内容</span></li><li class="step-indicator__item"><span>前往社区</span></li></ol></nav>
+    <main class="page-content mini-page">
+      <div class="report-preview-note"><span>发布预览</span><p>内容仅保存在本机，尚未上传到社区。</p></div>
+      <section class="publish-review-heading"><h2>这些内容将用于匿名分享</h2><p>仅包含公司、岗位、城市和年包。请核对后再继续。</p></section>
+      <div id="publishPreviewCards"></div>
+      <p id="publishEmptyMessage" class="background-access-message" hidden>还没有选择 Offer，请返回排序页选择。</p>
+      <aside class="publish-private-note"><strong>以下内容不会带入发布</strong><p>你的姓名和联系方式、个人偏好、匹配分数、接受意愿以及私人备注。</p></aside>
+      <p class="preview-boundary">社区发布入口尚未接入，现在可以先保存一份本地草稿。</p>
+      <p id="publishSaveStatus" class="copy-status" role="status"></p>
+    </main>
+    <footer class="bottom-action-bar"><a href="./result.html?ui=review-v2" class="btn btn-outline">返回排序</a><button type="button" id="savePublishDraftBtn" class="btn btn-primary" disabled>保存发布草稿</button></footer>
+  </div>
+  <script src="../scripts/publish-preview-ui.js"></script>
+</body>
+</html>

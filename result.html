@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OfferShow - 评分结果</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../styles/variant-b.css">
+  <link rel="stylesheet" href="../styles/six-dim-base.css">
+  <link rel="stylesheet" href="../styles/preference-portrait.css">
+  <link rel="stylesheet" href="../styles/paper-blue-v5.css">
+  <link rel="stylesheet" href="../styles/ui-polish.css">
+  <link rel="stylesheet" href="../styles/six-dim-v5.css">
+  <link rel="stylesheet" href="../styles/review-refinements.css?v=ai-buttons-align-v2">
+  <link rel="stylesheet" href="../styles/salary-card-refinements.css?v=compact-ranking-v5">
+</head>
+<body data-ui-variant="b" class="ui-minimal ui-paper-blue page-result page-six-dim">
+  <header class="app-header">
+    <div class="app-header__inner">
+      <a class="topbar-back" href="./offers.html?ui=review-v2" aria-label="返回上一页"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg><span>返回</span></a>
+      <h1 class="topbar-title">分析结果</h1>
+
+    </div>
+    <p class="mini-page-caption">六个维度，看清每份 Offer。</p><span class="mini-page-brand">OfferShow</span>
+  </header>
+  <div class="app-shell">
+
+    <nav class="flow-nav" aria-label="决策进度"><ol class="step-indicator"><li class="step-indicator__item is-complete"><a class="mini-step-link" href="./preferences.html?ui=review-v2">偏好画像</a></li><li class="step-indicator__item is-complete"><a class="mini-step-link" href="./offers.html?ui=review-v2">填写 Offer</a></li><li class="step-indicator__item is-current" aria-current="step"><span>分析结果</span></li><li class="step-indicator__item"><a class="mini-step-link" href="./background-check.html?ui=feedback-v1">AI 背调</a></li></ol></nav>
+    <main class="page-content mini-page">
+
+      <div class="report-heading"><p id="analysisTimestamp" class="timestamp"></p></div>
+      <div class="recommendation-frame">
+      <section class="recommendation">
+        <div class="recommendation__main">
+          <span class="badge">当前更推荐</span>
+          <h2><span id="topChoiceTitle">请先完成录入</span><span id="topChoiceRole" class="offer-role top-choice-role"></span></h2>
+          <p id="topChoiceSummary"></p>
+        </div>
+        <div class="score-pill">
+          <div class="score-pill__label"><span>综合匹配度</span><details class="info-tip"><summary aria-label="查看综合匹配度的说明">!</summary><div class="info-tip__bubble">分数反映当前填写的信息与你偏好的匹配程度。第一名与第二名相差不超过 3 分时，会提示“结果接近”。</div></details></div>
+          <div><strong id="topChoiceScore">0</strong><small>/ 100</small></div>
+          <span class="score-label">基于你的个人偏好</span>
+
+        </div>
+      </section>
+      </div>
+      <aside class="ranking-ai-bar" aria-label="AI 背调提示">
+        <img class="ranking-ai-bar__mascot" src="../assets/offershow-mascot-wave.png" alt="" aria-hidden="true" width="1254" height="1254">
+        <div class="ranking-ai-bar__copy"><p>怕选错，又怕错过？</p><span>让 AI 帮你多看一层，把顾虑问清楚。</span></div>
+        <div class="ranking-ai-bar__actions">
+          <a id="rankingBackgroundHintLink" href="./background-check.html?ui=share-bar-v1" class="ranking-ai-bar__action">AI 背调</a>
+          <details id="backgroundGuideTip" class="info-tip">
+            <summary aria-label="什么是 AI 背调">!</summary>
+            <div class="info-tip__bubble">
+              <strong>什么是 AI 背调？</strong>
+              <p>结合你填写的 Offer 和个人偏好，用 AI 帮你梳理公司情况、岗位情况、个人偏好，以及下一步的沟通建议。</p>
+              <p>AI 分析仅供参考，重要信息仍需通过官方资料或与招聘方沟通核实。</p>
+            </div>
+          </details>
+        </div>
+      </aside>
+      <section class="report-section ranking-section">
+        <div class="section-title ranking-section__heading"><h2>Offer 排序</h2><span class="section-subnote">按个人匹配度</span></div>
+        <div id="rankingList" class="ranking-list"></div>
+
+        <aside class="publish-invitation meeting-publish-invitation"><div class="publish-invitation__copy"><h3>分享这份 Offer，帮助更多人</h3><p>觉得这份 Offer 不错，或对薪资数据有疑问？欢迎来 OfferShow 爆料。</p></div><button type="button" id="openAnonymousPublishBtn" class="publish-text-button" data-miniprogram="salary" aria-label="前往 OfferShow 小程序薪资爆料页">去爆料 <span aria-hidden="true">→</span></button></aside>
+      </section>
+      <section class="report-section weights-section">
+        <div class="section-title weights-section__heading"><h2>决策权重</h2></div>
+        <div class="compact-disclosure__body"><div id="weightList" class="portrait-distribution"></div></div>
+      </section>
+
+      <section class="report-section comparison-section">
+        <details class="compact-disclosure" open>
+          <summary class="compact-summary"><h2>维度对比</h2></summary>
+          <div class="compact-disclosure__body">
+            <p class="scroll-hint">左右滑动查看各项得分 →</p>
+            <div id="dimensionTableWrapper" class="table-wrapper" tabindex="0" aria-label="六维比较表，可横向滚动"></div>
+          </div>
+        </details>
+      </section>
+
+    </main>
+
+    <footer class="bottom-action-bar">
+      <div class="result-edit-actions" role="group" aria-label="保存与调整分析内容">
+        <button type="button" id="saveLocalBtn" class="btn result-secondary-action" aria-label="保存到本地"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h12l4 4v14H3V3h2Z"/><path d="M7 3v6h10V3M7 21v-8h10v8"/></svg><span>保存到本地</span></button>
+        <a href="./preferences.html?from=result&ui=review-v2" class="btn result-secondary-action"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 7h6m4 0h6M4 17h10m4 0h2"/><circle cx="12" cy="7" r="2"/><circle cx="16" cy="17" r="2"/></svg><span>修改偏好</span></a>
+        <a href="./offers.html?from=result&ui=review-v2" class="btn result-secondary-action"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M8 7V4h8v3M4 12h16m-10 0v3h4v-3"/></svg><span>修改 Offer</span></a>
+        <button type="button" id="restartFlowBtn" class="btn btn-secondary" aria-label="重新开始" title="重新开始"><svg class="ui-icon result-reset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2.6 8.3M3 4v6h6"/></svg><span class="result-reset-label">重新开始</span></button>
+      </div>
+      <button type="button" id="openShareCardBtn" class="btn result-share-action" aria-label="分享" disabled><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V3m-4 4 4-4 4 4M5 11v9h14v-9"/></svg><span>分享</span></button>
+    </footer>
+  </div>
+
+  <div id="prototypeToast" class="prototype-toast" role="status" aria-live="polite" hidden></div>
+
+  <div class="share-modal" id="shareModal" hidden aria-hidden="true">
+    <div class="share-modal__backdrop" data-modal-close></div>
+    <div class="share-modal__dialog" role="dialog" aria-modal="true" aria-label="分享卡预览">
+      <div class="share-modal__head">
+        <div>
+          <p class="section-eyebrow">分享卡预览</p>
+          <h3>分享你的六维分析结果</h3>
+          <p class="share-preview-caption">包含公司名称、权重与得分，不含岗位、城市、薪资等信息。</p>
+        </div>
+        <button type="button" class="share-modal__close" data-modal-close aria-label="关闭">×</button>
+      </div>
+      <div class="share-modal__canvas-wrap">
+        <canvas id="shareCanvas" width="750" height="1400"></canvas>
+      </div>
+      <div class="share-modal__actions">
+        <button type="button" id="downloadShareCardBtn" class="btn btn-primary">下载图片</button>
+      </div>
+    </div>
+  </div>
+  <script src="../scripts/app-config.js"></script>
+  <script src="../scripts/china-cities.js"></script>
+  <script src="../scripts/location-catalog.js?v=overseas-v1"></script>
+  <script src="../scripts/result-actions-ui.js?v=share-bar-v1"></script>
+  <script src="../../state.js"></script>
+  <script src="../../storage.js"></script>
+  <script src="../../copywriting.js?v=manual-city-v1"></script>
+  <script src="../../scoring.js?v=manual-city-v1"></script>
+  <script src="../scripts/core-algorithm-adapter.js"></script>
+  <script src="../scripts/six-dim-v5.js?v=manual-city-v1"></script>
+  <script src="../scripts/dimension-radar.js"></script>
+</body>
+</html>

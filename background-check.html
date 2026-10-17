@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OfferShow · AI 背调</title>
+  <script>if ("scrollRestoration" in history) history.scrollRestoration = "manual";</script>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../styles/variant-b.css">
+  <link rel="stylesheet" href="../styles/six-dim-base.css">
+  <link rel="stylesheet" href="../styles/paper-blue-v5.css">
+  <link rel="stylesheet" href="../styles/ui-polish.css">
+  <link rel="stylesheet" href="../styles/six-dim-v5.css">
+  <link rel="stylesheet" href="../styles/review-refinements.css?v=background-three-dim-v1">
+  <link rel="stylesheet" href="../styles/salary-card-refinements.css?v=background-completeness-v1">
+</head>
+<body data-ui-variant="b" class="ui-minimal ui-paper-blue page-background-check page-six-dim">
+  <header class="app-header">
+    <div class="app-header__inner">
+      <a class="topbar-back" href="./result.html?ui=review-v2" aria-label="返回分析结果"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg><span>返回</span></a>
+      <h1 class="topbar-title">AI 背调</h1>
+    </div>
+    <p class="mini-page-caption">多了解一点，再做决定。</p><span class="mini-page-brand">OfferShow</span>
+  </header>
+  <div class="app-shell">
+    <nav class="flow-nav" aria-label="决策进度"><ol class="step-indicator"><li class="step-indicator__item is-complete"><a class="mini-step-link" href="./preferences.html?ui=review-v2">偏好画像</a></li><li class="step-indicator__item is-complete"><a class="mini-step-link" href="./offers.html?ui=review-v2">填写 Offer</a></li><li class="step-indicator__item is-complete"><a class="mini-step-link" href="./result.html?ui=review-v2">分析结果</a></li><li class="step-indicator__item is-current" aria-current="step"><span>AI 背调</span></li></ol></nav>
+    <main class="page-content mini-page">
+      <section class="background-disclaimer" aria-labelledby="backgroundDisclaimerTitle">
+        <div class="background-disclaimer__heading"><span class="background-disclaimer__icon" aria-hidden="true">!</span><h2 id="backgroundDisclaimerTitle">AI 背调内容声明</h2><span id="backgroundDemoBadge" class="background-disclaimer__badge" hidden>本地示例</span></div>
+        <p>AI 基于公开信息检索生成，仅供求职参考。</p>
+        <p>内容可能有误或过时，请勿作为唯一决策依据。</p>
+        <p>薪酬、职责、工时等，以公司正式文件为准。</p>
+      </section>
+      <section id="backgroundAccessMessage" class="background-access-message" hidden>
+        <span class="access-message-symbol" aria-hidden="true">↗</span><h2>从一份 Offer 开始了解</h2>
+        <p>回到排序页，选择你想了解的公司。</p>
+        <a href="./result.html?ui=review-v2" class="btn btn-primary">返回 Offer 排序</a>
+      </section>
+      <div id="backgroundOfferList" class="background-offer-list" aria-label="各公司 AI 背调"></div>
+      <div id="backgroundReportContent" hidden>
+        <nav class="report-jump-nav" role="tablist" aria-label="背调报告内容">
+          <button type="button" id="stabilityResearchTab" role="tab" aria-controls="stabilityResearch" aria-selected="true">稳定性</button>
+          <button type="button" id="growthResearchTab" role="tab" aria-controls="growthResearch" aria-selected="false" tabindex="-1">成长空间</button>
+          <button type="button" id="workIntensityResearchTab" role="tab" aria-controls="workIntensityResearch" aria-selected="false" tabindex="-1">工作强度</button>
+        </nav>
+        <section class="research-section research-section--plain" id="stabilityResearch" role="tabpanel" aria-labelledby="stabilityResearchTab" tabindex="0">
+          <h2 id="stabilityResearchTitle" class="research-plain-title">稳定性</h2>
+          <div id="stabilityResearchContent" class="research-plain-text"></div>
+        </section>
+        <section class="research-section research-section--plain" id="growthResearch" role="tabpanel" aria-labelledby="growthResearchTab" tabindex="0" hidden>
+          <h2 id="growthResearchTitle" class="research-plain-title">成长空间</h2>
+          <div id="growthResearchContent" class="research-plain-text"></div>
+        </section>
+        <section class="research-section research-section--plain" id="workIntensityResearch" role="tabpanel" aria-labelledby="workIntensityResearchTab" tabindex="0" hidden>
+          <h2 id="workIntensityResearchTitle" class="research-plain-title">工作强度</h2>
+          <div id="workIntensityResearchContent" class="research-plain-text"></div>
+        </section>
+      </div>
+    </main>
+    <footer class="bottom-action-bar"><a href="./result.html?ui=review-v2" class="btn btn-outline">返回 Offer 排序</a><button type="button" id="memberUnlockMoreBtn" class="btn btn-primary" data-miniprogram="membership">会员解锁更多</button></footer>
+  </div>
+  <div id="prototypeToast" class="prototype-toast" role="status" aria-live="polite" hidden></div>
+  <script src="../scripts/app-config.js"></script>
+  <script src="../scripts/china-cities.js"></script>
+  <script src="../scripts/location-catalog.js?v=overseas-v1"></script>
+  <script src="../scripts/result-actions-ui.js?v=meeting-v1"></script>
+  <script src="../../state.js"></script>
+  <script src="../../storage.js"></script>
+  <script src="../../copywriting.js?v=manual-city-v1"></script>
+  <script src="../../scoring.js?v=manual-city-v1"></script>
+  <script src="../scripts/core-algorithm-adapter.js"></script>
+  <script src="../scripts/six-dim-v5.js?v=manual-city-v1"></script>
+  <script src="../scripts/background-demo-content.js?v=background-three-dim-v1"></script>
+  <script src="../scripts/background-check-ui.js?v=demo-access-v2"></script>
+</body>
+</html>
