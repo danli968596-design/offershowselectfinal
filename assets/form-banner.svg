@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="250" viewBox="0 0 480 250">
+  <g fill="#267edc" opacity=".3" font-family="Arial, PingFang SC, Microsoft YaHei, sans-serif" font-weight="700">
+    <text x="-13" y="29" font-size="39">成长</text>
+    <text x="77" y="17" font-size="15">工作节奏</text>
+    <text x="154" y="36" font-size="54">薪资</text>
+    <text x="282" y="19" font-size="17">生活平衡</text>
+    <text x="360" y="36" font-size="42">稳定</text>
+    <text x="16" y="58" font-size="22">适合你</text>
+    <text x="119" y="60" font-size="21">OfferShow</text>
+    <text x="269" y="57" font-size="18">下一站</text>
+    <text x="373" y="71" font-size="27">工作</text>
+    <text x="-29" y="116" font-size="52">城市</text>
+    <text x="103" y="109" font-size="49">成长空间</text>
+    <text x="312" y="105" font-size="36">选择</text>
+    <text x="449" y="47" font-size="25" transform="rotate(90 449 47)">适合你的 Offer</text>
+    <text x="32" y="143" font-size="18">待遇</text>
+    <text x="96" y="142" font-size="22">工作与生活</text>
+    <text x="259" y="140" font-size="24">长期发展</text>
+    <text x="-24" y="199" font-size="59">Offer</text>
+    <text x="126" y="204" font-size="54">适合你</text>
+    <text x="311" y="190" font-size="44">生活</text>
+    <text x="393" y="224" font-size="22">偏好</text>
+    <text x="29" y="228" font-size="20">稳定预期</text>
+    <text x="131" y="248" font-size="36">OfferShow</text>
+    <text x="341" y="247" font-size="18">成长 · 城市</text>
+  </g>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="graduate" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 29v13c8 8 24 8 32 0V29" fill="currentColor" fill-opacity=".14"/>
+    <path d="m8 24 24-12 24 12-24 12Z" fill="currentColor" fill-opacity=".14"/>
+    <path d="m32 24 21 1v17"/>
+    <path d="m50 49 3-7 3 7"/>
+  </symbol>
+
+  <symbol id="briefcase" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M23 18v-4a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v4"/>
+    <rect x="8" y="18" width="48" height="36" rx="7" fill="currentColor" fill-opacity=".14"/>
+    <path d="M8 29c6 5 13 8 20 9m8 0c7-1 14-4 20-9"/>
+    <rect x="28" y="33" width="8" height="10" rx="2"/>
+  </symbol>
+
+  <symbol id="summit" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 55V44h13V33h13V22h13v33Z" fill="currentColor" fill-opacity=".14"/>
+    <path d="M47 22V8m0 0h9l-4 6 4 6H47" fill="currentColor" fill-opacity=".14"/>
+    <path d="M8 55h48M12 24l8-8m-8 0h8v8"/>
+  </symbol>
+
+  <symbol id="compass" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="33" r="23"/>
+    <path d="m43 22-7 15-15 7 7-15Z" fill="currentColor" fill-opacity=".16"/>
+    <path d="m28 29 8 8M32 10v5m23 18h-5M32 56v-5M9 33h5"/>
+    <circle cx="32" cy="33" r="2" fill="currentColor" stroke="none"/>
+  </symbol>
+
+  <symbol id="sprout" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M31 38C17 39 10 31 10 18c14-1 24 7 21 20Z" fill="currentColor" fill-opacity=".14"/>
+    <path d="M32 30c0-12 8-19 22-19 0 14-8 22-22 19Z" fill="currentColor" fill-opacity=".16"/>
+    <path d="M31 54V37c0-7 5-12 11-16M31 39l-10-11M11 55c12-4 30-4 42 0"/>
+  </symbol>
+
+  <symbol id="coins" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 38v11c0 4 8 7 17 7s17-3 17-7V38" fill="currentColor" fill-opacity=".14"/>
+    <ellipse cx="26" cy="38" rx="17" ry="7" fill="currentColor" fill-opacity=".14"/>
+    <path d="M9 44c0 4 8 7 17 7 5 0 10-1 13-2"/>
+    <circle cx="42" cy="23" r="14" fill="currentColor" fill-opacity=".16"/>
+    <circle cx="42" cy="23" r="8"/>
+  </symbol>
+
+  <symbol id="shield" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 8c7 5 14 8 23 9v16c0 11-10 19-23 23C19 52 9 44 9 33V17c9-1 16-4 23-9Z" fill="currentColor" fill-opacity=".14"/>
+    <path d="m22 32 7 7 14-15"/>
+  </symbol>
+
+  <symbol id="horizon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 39a15 15 0 0 1 30 0" fill="currentColor" fill-opacity=".16"/>
+    <path d="M8 39h48M32 10v6M12 19l5 5m35-5-5 5M8 29l5 2m43-2-5 2M13 47h38M22 54h20"/>
+  </symbol>
+
+  <symbol id="city" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11 55V23h17v32m0 0V10h16v45m0-24h10v24" fill="currentColor" fill-opacity=".14"/>
+    <path d="M8 55h48M17 31h5m-5 8h5m-5 8h5M34 19h4m-4 9h4m-4 9h4m11 3h1m-1 8h1M33 55V46h6v9"/>
+  </symbol>
+
+  <symbol id="gauge" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13 48a24 24 0 1 1 38 0Z" fill="currentColor" fill-opacity=".14"/>
+    <path d="M16 37h5m-1-16 4 4M32 15v5m12 1-4 4m8 12h-5M32 37l7-10"/>
+    <circle cx="32" cy="37" r="4" fill="currentColor"/>
+    <path d="M24 55h16"/>
+  </symbol>
+</svg>

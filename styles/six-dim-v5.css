@@ -1124,8 +1124,8 @@ body.ui-paper-blue.page-result.page-six-dim[data-ui-variant="b"] .bottom-action-
 }
 body.ui-paper-blue.page-result.page-six-dim[data-ui-variant="b"] .bottom-action-bar #restartFlowBtn .ui-icon { width: 18px; height: 18px; }
 
-/* Fourth stop: AI background-check UI. */
-body.ui-paper-blue.page-six-dim[data-ui-variant="b"] .step-indicator { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+/* Three-step decision flow. */
+body.ui-paper-blue.page-six-dim[data-ui-variant="b"] .step-indicator { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 body.ui-paper-blue.page-six-dim[data-ui-variant="b"] .step-indicator .mini-step-link { white-space: nowrap; text-decoration: none; }
 body.ui-paper-blue.page-six-dim[data-ui-variant="b"] .background-check-link {
   display: inline-flex; align-items: center; justify-content: center; gap: 4px;

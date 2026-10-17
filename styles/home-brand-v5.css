@@ -71,7 +71,7 @@ body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .home-brand-card--front 
 body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-footer { margin-top: 16px; }
 body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-footer img { width: 40px; }
 body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-footer strong { color: #345d82; font-weight: 650; }
-/* Spread four equal rows between the section heading and brand footer. */
+/* Spread three equal rows between the section heading and brand footer. */
 body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-sheet { flex: 1; }
 body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-route {
   display: flex;
@@ -84,7 +84,7 @@ body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-route {
 body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-flow {
   flex: 1;
   width: 100%;
-  grid-template-rows: repeat(4, minmax(64px, 1fr));
+  grid-template-rows: repeat(3, minmax(64px, 1fr));
   gap: 4px;
 }
 body.ui-paper-blue.page-home-brand[data-ui-variant="b"] .mini-home-flow li {

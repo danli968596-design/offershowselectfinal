@@ -5,11 +5,9 @@ require("./state.js");
 require("./copywriting.js");
 require("./scoring.js");
 require("./storage.js");
-require("./OfferShow-UI确认版-20261015/scripts/app-config.js");
-require("./OfferShow-UI确认版-20261015/scripts/china-cities.js");
-require("./OfferShow-UI确认版-20261015/scripts/background-demo-content.js");
-require("./OfferShow-UI确认版-20261015/scripts/core-algorithm-adapter.js");
-require("./OfferShow-UI确认版-20261015/scripts/six-dim-v5.js");
+require("./scripts/china-cities.js");
+require("./scripts/core-algorithm-adapter.js");
+require("./scripts/six-dim-v5.js");
 
 const model = global.OfferShow6D;
 
@@ -59,22 +57,6 @@ function validOffer(index = 1, overrides = {}) {
 
 assert.equal(model.MIN_OFFERS, 2);
 assert.equal(model.MAX_OFFERS, 6);
-assert.equal(model.DEMO_MODE, true, "当前内部原型应启用演示模式");
-assert.equal(model.aiAccessFor({ id: "top" }, 1, { used: false }, true).type, "trial", "演示模式第一名可展示完整背调");
-assert.equal(model.aiAccessFor({ id: "top" }, 1, { used: true, offerId: "old" }, true).type, "trial", "演示模式不受已用免费次数影响");
-assert.equal(model.aiAccessFor({ id: "top" }, 1, { used: true, offerId: "top" }, true).type, "trial", "演示模式可重复打开同一 Offer");
-assert.equal(model.aiAccessFor({ id: "second" }, 2, { used: false, offerId: "" }, true).type, "locked", "演示模式仍应锁定非第一名");
-assert.equal(model.aiAccessFor({ id: "top" }, 1, { used: true, offerId: "old" }, false).type, "locked", "正式模式应保持一次免费限制");
-assert.equal(model.aiAccessFor({ id: "top" }, 1, { used: true, offerId: "top" }, false).type, "view", "正式模式可重新查看已解锁的同一 Offer");
-assert.equal(model.aiAccessFor({ id: "top" }, 1, { used: false, offerId: "" }, false).type, "trial", "正式模式首次应允许第一名试用");
-const demoReport = global.OfferShowBackgroundDemo.build();
-assert.equal(demoReport.reportTitle, "XXX公司产品经理岗位分析");
-assert.equal(demoReport.targetCity, "深圳");
-assert.equal(demoReport.targetRole, "产品经理");
-assert.deepEqual(Object.keys(demoReport.sections), ["stability", "growth", "workIntensity"]);
-assert.match(demoReport.sections.stability, /岗位的实际稳定性/);
-assert.match(demoReport.sections.growth, /产品规划、需求分析/);
-assert.match(demoReport.sections.workIntensity, /版本发布、业务目标/);
 
 const normalized = model.normalizeSession({ offers: Array.from({ length: 7 }, (_, index) => validOffer(index + 1)) });
 assert.equal(normalized.offers.length, 6, "旧数据迁移也必须限制为 6 份 Offer");

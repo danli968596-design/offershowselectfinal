@@ -14,18 +14,15 @@
 - 未知信息按 50 分处理并展示完整度；
 - 直接意愿只用于结果对照，不影响排名；
 - 结果可生成并下载 3:4 PNG 分享卡；
-- 第一名 Offer 可免费试用一次 AI 背调，其他 Offer 展示会员解锁入口；当前仅完成静态报告结构，尚未接入 AI、会员和支付；
-- 第一名点击“首次免费解锁”先展示朦胧预览，点击提示后才显示正文并计一次；同一展开内切换模块不计次，收起或刷新后再次查看需会员。演示模式不再允许重复免费；真实会员与跨设备计次由宿主/后端接入；
-- 演示模式的 AI 背调已内置完整静态样例，会结合当前 Offer 与个人偏好生成公司、岗位、匹配点、潜在冲突和面谈核实清单；其中模拟事实不代表真实背调结论；
 - 结果页提供“匿名发布其他 Offer”的小程序中间弹窗；当前仅完成 UI，尚未配置跳转；
 - 本地 `localStorage` 持久化。
 
 省市选择数据使用 [cn-division](https://github.com/kk-418/cn-division) 的 2026 省市数据（MIT License），其项目说明的数据来源为民政部地名信息服务平台。
 
-## 四步流程
+## 三步流程
 
 ```text
-偏好设置 → Offer 录入 → 评分结果 → AI 背调
+偏好设置 → Offer 录入 → 评分结果
 ```
 
 ## 关键文件
@@ -34,8 +31,7 @@
 - `scoring.js`：唯一的六维权重、Offer 评分和排名算法源；
 - `state.js`、`storage.js`、`copywriting.js`：原项目的核心状态、本地存储和维度文案模块；
 - `OfferShow-UI确认版-20261015/scripts/core-algorithm-adapter.js`：新 UI 字段与原算法字段的适配层，不重复评分公式；
-- `OfferShow-UI确认版-20261015/scripts/six-dim-v5.js`：新 UI 的表单校验、页面渲染、跳转和 AI 权限原型逻辑；
-- `OfferShow-UI确认版-20261015/scripts/background-check-ui.js`：AI 背调静态报告的访问与展示逻辑；
+- `OfferShow-UI确认版-20261015/scripts/six-dim-v5.js`：新 UI 的表单校验、页面渲染和跳转逻辑；
 - `ALGORITHM.md`：完整算法规范；
 - `scoring.test.js`、`production-flow.test.js`：核心算法与正式流程自动化测试。
 

@@ -26,7 +26,7 @@
   </header>
   <div class="app-shell">
 
-    <nav class="flow-nav" aria-label="决策进度"><ol class="step-indicator"><li class="step-indicator__item is-complete"><a class="mini-step-link" href="./preferences.html?ui=review-v2">偏好画像</a></li><li class="step-indicator__item is-complete"><a class="mini-step-link" href="./offers.html?ui=review-v2">填写 Offer</a></li><li class="step-indicator__item is-current" aria-current="step"><span>分析结果</span></li><li class="step-indicator__item"><a class="mini-step-link" href="./background-check.html?ui=feedback-v1">AI 背调</a></li></ol></nav>
+    <nav class="flow-nav" aria-label="决策进度"><ol class="step-indicator"><li class="step-indicator__item is-complete"><a class="mini-step-link" href="./preferences.html?ui=review-v2">偏好画像</a></li><li class="step-indicator__item is-complete"><a class="mini-step-link" href="./offers.html?ui=review-v2">填写 Offer</a></li><li class="step-indicator__item is-current" aria-current="step"><span>分析结果</span></li></ol></nav>
     <main class="page-content mini-page">
 
       <div class="report-heading"><p id="analysisTimestamp" class="timestamp"></p></div>
@@ -45,21 +45,6 @@
         </div>
       </section>
       </div>
-      <aside class="ranking-ai-bar" aria-label="AI 背调提示">
-        <img class="ranking-ai-bar__mascot" src="../assets/offershow-mascot-wave.png" alt="" aria-hidden="true" width="1254" height="1254">
-        <div class="ranking-ai-bar__copy"><p>怕选错，又怕错过？</p><span>让 AI 帮你多看一层，把顾虑问清楚。</span></div>
-        <div class="ranking-ai-bar__actions">
-          <a id="rankingBackgroundHintLink" href="./background-check.html?ui=share-bar-v1" class="ranking-ai-bar__action">AI 背调</a>
-          <details id="backgroundGuideTip" class="info-tip">
-            <summary aria-label="什么是 AI 背调">!</summary>
-            <div class="info-tip__bubble">
-              <strong>什么是 AI 背调？</strong>
-              <p>结合你填写的 Offer 和个人偏好，用 AI 帮你梳理公司情况、岗位情况、个人偏好，以及下一步的沟通建议。</p>
-              <p>AI 分析仅供参考，重要信息仍需通过官方资料或与招聘方沟通核实。</p>
-            </div>
-          </details>
-        </div>
-      </aside>
       <section class="report-section ranking-section">
         <div class="section-title ranking-section__heading"><h2>Offer 排序</h2><span class="section-subnote">按个人匹配度</span></div>
         <div id="rankingList" class="ranking-list"></div>
@@ -115,14 +100,13 @@
       </div>
     </div>
   </div>
-  <script src="../scripts/app-config.js"></script>
   <script src="../scripts/china-cities.js"></script>
   <script src="../scripts/location-catalog.js?v=overseas-v1"></script>
   <script src="../scripts/result-actions-ui.js?v=share-bar-v1"></script>
-  <script src="../../state.js"></script>
-  <script src="../../storage.js"></script>
-  <script src="../../copywriting.js?v=manual-city-v1"></script>
-  <script src="../../scoring.js?v=manual-city-v1"></script>
+  <script src="../state.js"></script>
+  <script src="../storage.js"></script>
+  <script src="../copywriting.js?v=manual-city-v1"></script>
+  <script src="../scoring.js?v=manual-city-v1"></script>
   <script src="../scripts/core-algorithm-adapter.js"></script>
   <script src="../scripts/six-dim-v5.js?v=manual-city-v1"></script>
   <script src="../scripts/dimension-radar.js"></script>

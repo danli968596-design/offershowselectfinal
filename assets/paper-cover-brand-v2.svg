@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" fill="none">
+  <defs>
+    <filter id="paper">
+      <feTurbulence type="fractalNoise" baseFrequency=".56" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope=".13" />
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="multiply" />
+    </filter>
+    <filter id="shadow" x="-30%" y="-30%" width="170%" height="170%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#315c80" flood-opacity=".14" />
+    </filter>
+    <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.6" fill="#538bc1" opacity=".18" />
+    </pattern>
+  </defs>
+  <g filter="url(#paper)">
+    <path fill="#ddecfc" d="M0 0h420v280H0z" />
+    <path fill="#c5e2f9" opacity=".65" d="m307 0 113 0v181l-69 29-27-81Z" />
+    <path fill="#edf6ff" d="m0 171 149-37 46 130L0 280Z" />
+    <path fill="url(#dots)" d="M0 0h90v71H0zm378 104h42v118h-42z" />
+    <path fill="#2878c9" d="m0 264 28-7 15 3 35-8 18 5 44-13 28 4 15-8 36 4 38-17 18 2 32-10 19 3 54-20 40 8v70H0Z" />
+  </g>
+  <path fill="#fff" d="m0 248 11 4 8-4 17 5 14-6 12 2 21-5 7 3 17-7 15 1 9-5 21 6 18-4 9 2 17-4 7 1 19-6 10 3 17-6 12 3 18-7 14 1 20-5 11 1 18-5 11 3 21-8 7 2 21-6 13 1 13-4 11 2v10l-11-1-9 5-15-2-16 6-12-1-18 6-15-1-15 5-13-1-17 6-13-2-20 7-15-1-20 6-12-2-16 7-16-3-16 5-14-3-13 5-16-1-12 5-21-3-12 5-19-2-17 5-16-3-15 5-9-3-22 5L0 263Z" />
+  <path d="m33 43 4-9 4 9 9 4-9 4-4 9-4-9-9-4Z" fill="#fff" />
+  <path d="m17 88 3-7 3 7 7 3-7 3-3 7-3-7-7-3Z" fill="#f9cc65" />
+  <path d="m20 185 9 4-12 4 11 5-13 4" stroke="#fff" stroke-width="3" stroke-linecap="round" />
+</svg>

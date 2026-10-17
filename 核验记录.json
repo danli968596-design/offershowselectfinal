@@ -1,26 +1,19 @@
 {
   "date": "2026-10-15",
-  "project": "/Users/xiangyuxin/Downloads/offer-select-main 2 copy（最终版_加part4）",
+  "project": "OfferShow-完整项目-20261015/会员及AI背调阉割版",
+  "version": "three-step-no-membership-no-ai-background-check",
   "actualProject": true,
   "fixedFixtureScoresUsed": false,
-  "coreFilesUnchanged": {
-    "state.js": "9e92894b9aabd33171b774d08b22d1465000f7b04d7940171a2d45f01a7b2ad4",
-    "storage.js": "e813531dc535e02b3592414d0a57865e71034e5248509d88d800157bcd8b45d7",
-    "copywriting.js": "bf821fbaea638adcb4d792a5c0d669863f11fcf21a408c5063caf11c5e9eb71d",
-    "scoring.js": "09c53e843bd7061735d94a8d94a7dd4d537e489c31563453cdd89bbb39783e5e"
-  },
   "algorithmTests": "15625 combinations passed",
   "productionFlowTests": "passed",
-  "localReferencesChecked": 135,
-  "missingResources": [],
   "javascriptSyntax": "passed",
   "browserFlow": [
-    "空白偏好表单填写十题",
-    "手动加载三份示例 Offer",
-    "原评分算法生成 78.3/77.0/68.7 排序",
-    "进入真实背调页显示三段声明",
-    "点击首次免费解锁展开 blur(4px) 预览，正文未显示"
+    "首页显示三步流程",
+    "偏好页、Offer页和结果页只显示三段进度",
+    "结果页推荐卡后直接显示Offer排序",
+    "结果页不显示AI背调引导框或入口",
+    "旧AI背调地址返回404"
   ],
   "browserErrors": [],
-  "note": "AI 正文与会员入口仍为原型；免费次数由本机记录，正式会员和跨设备次数需宿主/后端接入。"
+  "note": "原项目未修改；本副本不包含会员及AI背调页面、示例内容、访问控制和跳转入口。"
 }

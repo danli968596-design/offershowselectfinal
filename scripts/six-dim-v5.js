@@ -3,9 +3,6 @@
 
   const MODEL_VERSION = "offershow-6d-v5";
   const SESSION_KEY = window.OfferHelperStorage?.SESSION_KEY || "offer-helper-miniapp-session-v1";
-  const AI_TRIAL_KEY = "offershow-ai-background-trial-v1";
-  const APP_CONFIG = typeof window !== "undefined" && window.OfferShowConfig ? window.OfferShowConfig : {};
-  const DEMO_MODE = APP_CONFIG.environment === "demo";
   const MIN_OFFERS = 2;
   const MAX_OFFERS = 6;
   const DEMO_COMPANY_NAMES = Object.freeze({ offershow1: "OfferShow1", offershow2: "OfferShow2", offershow3: "OfferShow3" });
@@ -184,22 +181,6 @@
   function saveSession(session) {
     if (window.OfferHelperStorage) window.OfferHelperStorage.saveSessionRaw(session);
     else localStorage.setItem(SESSION_KEY, JSON.stringify(session));
-  }
-  function loadAiTrial() {
-    try {
-      const value = JSON.parse(localStorage.getItem(AI_TRIAL_KEY) || "null");
-      return value?.used && has(value.offerId) ? value : { used: false, offerId: "", createdAt: "" };
-    } catch (_) {
-      return { used: false, offerId: "", createdAt: "" };
-    }
-  }
-  function claimAiTrial(offerId) {
-    const value = { used: true, offerId: String(offerId), createdAt: new Date().toISOString() };
-    localStorage.setItem(AI_TRIAL_KEY, JSON.stringify(value));
-    return value;
-  }
-  function clearAiTrial() {
-    localStorage.removeItem(AI_TRIAL_KEY);
   }
   function validateCityPreferences(prefs) {
     const preferred = parseCityList(prefs.preferredCity);
@@ -854,26 +835,6 @@
     ctx.fillText("内容由当前公司名称、偏好权重与 Offer 得分实时生成。", 48, canvas.height - 84);
     ctx.fillText("不含岗位、城市、薪资等信息；匹配度结果仅供参考。", 48, canvas.height - 46);
   }
-  function backgroundCheckUrl(offer) {
-    return `./background-check.html?${new URLSearchParams({ offerId: offer.id, ui: "review-v2" })}`;
-  }
-  function aiAccessFor(offer, rank, trial, demoMode = DEMO_MODE) {
-    // Demo mode never consumes the trial. Production keeps one free unlock and
-    // lets the user reopen that same Offer without spending another chance.
-    if (demoMode) return rank === 1
-      ? { type: "trial", label: "首次免费解锁", href: backgroundCheckUrl(offer) }
-      : { type: "locked", label: "会员解锁", href: "#" };
-    if (trial?.used) return String(trial.offerId) === String(offer.id)
-      ? { type: "view", label: "查看 AI 背调", href: backgroundCheckUrl(offer) }
-      : { type: "locked", label: "会员解锁", href: "#" };
-    return rank === 1
-      ? { type: "trial", label: "首次免费解锁", href: backgroundCheckUrl(offer) }
-      : { type: "locked", label: "会员解锁", href: "#" };
-  }
-  function aiActionLabel(access) {
-    if (access.type === "trial") return "首次免费解锁";
-    return access.type === "locked" ? "会员解锁" : "查看背调";
-  }
   function showPrototypeToast(message) {
     const toast = $("prototypeToast");
     if (!toast) return;
@@ -884,7 +845,6 @@
   }
   function initResult() {
     if (!$("rankingList")) return;
-    if (DEMO_MODE) document.body.classList.add("is-demo-mode");
     $("restartFlowBtn").addEventListener("click", () => {
       confirmAction("重新开始？", "将清空这次的偏好设置、全部 Offer 和分析结果。", "确认清空", () => {
         if (window.OfferHelperStorage) {
@@ -905,7 +865,6 @@
       return;
     }
     const top = analysis.scoredOffers[0];
-    const trial = loadAiTrial();
     $("topChoiceTitle").textContent = top.company;
     $("topChoiceRole").textContent = top.role;
     $("topChoiceSummary").textContent = top.isCloseToNext
@@ -923,7 +882,6 @@
         <td class="dimension-table__match">${offer.totalScore.toFixed(1)}</td>
         ${DIMENSIONS.map(([key]) => `<td>${Math.round(offer.dimensionScores[key])}</td>`).join("")}
       </tr>`).join("")}</tbody></table>`;
-    window.OfferShowReviewActions.init(analysis.scoredOffers, DEMO_MODE);
     $("saveLocalBtn").addEventListener("click", () => {
       // UI feedback only. Existing form storage remains the prototype implementation.
       showPrototypeToast("填写信息保存在本地设备");
@@ -962,9 +920,9 @@
     });
   }
 
-  window.OfferShow6D = { MODEL_VERSION, SESSION_KEY, AI_TRIAL_KEY, DEMO_MODE, MIN_OFFERS, MAX_OFFERS, DIMENSIONS,
+  window.OfferShow6D = { MODEL_VERSION, SESSION_KEY, MIN_OFFERS, MAX_OFFERS, DIMENSIONS,
     normalizeSession, validateCityPreferences, validatePreferences, validateOffers, cleanCityLabel, cityKey, parseCityList,
-    calculateWeights, redistribute, packageScore, scoreOffer, analyze, buildShareCardData, aiAccessFor, aiActionLabel };
+    calculateWeights, redistribute, packageScore, scoreOffer, analyze, buildShareCardData };
   if (typeof document !== "undefined") {
     initInfoTips(); decoratePreferenceLabels(); initPreferences(); initOffers(); initResult();
   }
